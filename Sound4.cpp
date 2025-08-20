@@ -22,7 +22,7 @@ channelData _chan[channels];
 #define phaccu_bitshifts ((CHAR_BIT * sizeof(phase_accumulator_t)) - (CHAR_BIT * sizeof(amplitude_t)))
 
 
-#define qsinewave(i) sample += pgm_read_byte_near(sinetable256 + (uint8_t)((_chan[i].phaccu += _chan[i].tword_m) >> phaccu_bitshifts)) >> bitshifts;
+//#define qsinewave(i) sample += pgm_read_byte_near(sinetable256 + (uint8_t)((_chan[i].phaccu += _chan[i].tword_m) >> phaccu_bitshifts)) >> bitshifts;
 #define qsquarewave(i) if (((_chan[i].phaccu += _chan[i].tword_m) >> phaccu_bitshifts) < ((1<<(CHAR_BIT * sizeof(amplitude_t)))/2)) sample += ((1<<(CHAR_BIT * sizeof(amplitude_t)))-1) >> bitshifts;
 
 #define qwave(i) qsquarewave(i)//qsinewave(i)

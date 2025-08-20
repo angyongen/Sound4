@@ -15,6 +15,7 @@ PROGMEM const frequency_t midinotefreqtable[] PROGMEM = {
 };
 */
 //const uint8_t channels = 1;
+/*
 PROGMEM const amplitude_t sinetable256[] PROGMEM = {
   127,130,133,136,139,143,146,149,152,155,158,161,164,167,170,173,176,178,181,184,187,190,192,195,198,200,203,205,208,210,212,215,217,219,221,223,225,227,229,231,233,234,236,238,239,240,
   242,243,244,245,247,248,249,249,250,251,252,252,253,253,253,254,254,254,254,254,254,254,253,253,253,252,252,251,250,249,249,248,247,245,244,243,242,240,239,238,236,234,233,231,229,227,225,223,
@@ -34,7 +35,7 @@ PROGMEM const uint8_t sinetable128[] PROGMEM = {64,66,67,69,70,72,73,75,77,78,80
 7,7,8,9,10,11,12,12,13,14,15,16,18,19,20,21,22,23,24,26,27,28,30,31,32,34,35,37,38,39,
 41,42,44,45,47,48,50,51,53,55,56,58,59,61,62,64,
 */
-#define channels 8
+#define channels 4//8
 #define bitshifts 3
 /*
 PROGMEM const uint8_t sinetable64[] PROGMEM = {32,32,33,34,35,35,36,37,38,38,39,40,41,41,42,43,44,44,45,46,46,47,48,48,49,50,50,51,52,52,
@@ -60,6 +61,7 @@ public:
 /*const*/volatile frequency_t PWM_INTERRUPT_FREQUENCY=F_CPU/256;
 //const frequency_t PWM_INTERRUPT_FREQUENCY=F_CPU/255;//510;
 //const double PWM_INTERRUPT_FREQUENCY=31376.6;      // measured?
+
 	void begin();
 	void test();
 	inline void setChannel(uint8_t channel, amplitude_t volume, frequency_t freq);
